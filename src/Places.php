@@ -6,13 +6,15 @@
       private $length_of_stay;
       private $reason;
       private $rating;
+      private $image;
 
-      function __construct($visit_city, $visit_length, $visit_reason, $visit_rating)
+      function __construct($visit_city, $visit_length, $visit_reason, $visit_rating, $image_path)
       {
           $this->city_name = $visit_city;
           $this->length_of_stay = $visit_length;
           $this->reason = $visit_reason;
           $this->rating = $visit_rating;
+          $this->image= $image_path;
       }
 
       function getCityName()
@@ -30,7 +32,7 @@
           return $this->length_of_stay;
       }
 
-      function setLengthOfStay()
+      function setLengthOfStay($visit_length)
       {
           $this->length_of_stay = $visit_length;
       }
@@ -40,7 +42,7 @@
           return $this->reason;
       }
 
-      function setReason()
+      function setReason($visit_reason)
       {
           $this->reason = $visit_reason;
       }
@@ -50,9 +52,19 @@
           return $this->rating;
       }
 
-      function setRating()
+      function setRating($visit_rating)
       {
           $this->rating = $visit_rating;
+      }
+
+      function getImage()
+      {
+          return $this->image;
+      }
+
+      function setImage($image_path)
+      {
+          $this->image = $image_path;
       }
 
       function save()

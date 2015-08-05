@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>List your places!</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -11,6 +12,7 @@
     <ul>
     {% for place in places %}
         <li>{{ place.getCityName }}</li>
+        <p><img src="{{ place.getImage }}" width="25%"></p>
         <ul>
           <li>Length of stay: {{ place.getLengthOfStay }}</li>
           <li>Reason for visit: {{ place.getReason }}</li>
@@ -21,14 +23,18 @@
     {% endif %}
 
      <form action='/places' method='post'>
+        <div class='form-group'>
         <label for='place_name'>Where did you go?</label>
-        <input id='place_name' name='place_name' type='text'><br>
+        <input class='form-control' id='place_name' name='place_name' type='text'><br>
         <label for='length'>How long did you stay there?</label>
-        <input id='length' name='length' type = 'text'><br>
+        <input class='form-control' id='length' name='length' type = 'text'><br>
         <label for='reason'>Why did you go there?</label>
-        <input id='reason' name='reason' type = 'text'><br>
+        <input class='form-control' id='reason' name='reason' type = 'text'><br>
         <label for='rating'>What rating (out of 10) would you give it?</label>
-        <input id='rating' name='rating' type = 'text'><br>
+        <input class='form-control' id='rating' name='rating' type = 'text'><br>
+        <label for='image'>Give the image url</label>
+        <input class='form-control' id='image' name='image' type= 'text'><br>
+      </div>
         <button type='submit'>submit</button>
     </form>
 
