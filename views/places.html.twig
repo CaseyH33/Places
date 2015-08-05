@@ -5,26 +5,36 @@
 
 <body>
 <h1>Places you've been:</h1>
-    <!-- {% if places is not empty %}
+    {% if places is not empty %}
 
     <p>Here are the places you've been:</p>
     <ul>
     {% for place in places %}
         <li>{{ place.getCityName }}</li>
+        <ul>
+          <li>Length of stay: {{ place.getLengthOfStay }}</li>
+          <li>Reason for visit: {{ place.getReason }}</li>
+          <li>Rating out of 10: {{ place.getRating }}</li>
+        </ul>
     {% endfor %}
     </ul>
     {% endif %}
 
      <form action='/places' method='post'>
-        <label for='place_name'>Place</label>
-        <input id='place_name' name='place_name' type='text'>
-
+        <label for='place_name'>Where did you go?</label>
+        <input id='place_name' name='place_name' type='text'><br>
+        <label for='length'>How long did you stay there?</label>
+        <input id='length' name='length' type = 'text'><br>
+        <label for='reason'>Why did you go there?</label>
+        <input id='reason' name='reason' type = 'text'><br>
+        <label for='rating'>What rating (out of 10) would you give it?</label>
+        <input id='rating' name='rating' type = 'text'><br>
         <button type='submit'>submit</button>
     </form>
 
     <form action='/delete_places' method='post'>
         <button type='submit'>Clear</button>
-    </form>  -->
+    </form>
 
 </body>
 </html>
